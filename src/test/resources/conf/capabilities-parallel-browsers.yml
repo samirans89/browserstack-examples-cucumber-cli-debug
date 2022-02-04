@@ -1,0 +1,23 @@
+testEndpoint: http://nordstrom.com
+
+driverType: cloudDriver
+
+cloudDriver:
+  hubUrl: https://hub-cloud.browserstack.com/wd/hub
+  user:
+  accessKey:
+  localTunnel:
+    enable: false
+  common_capabilities:
+    project: BrowserStack Demo Repository
+    buildPrefix: browserstack-examples-cucumber-cli
+    capabilities:
+      browserstack.debug: true
+      browserstack.networkLogs: true
+      browserstack.console: debug
+  platforms:
+    - name: Win10_Chrome_Latest-1
+      os: Windows
+      os_version: '10'
+      browser: Chrome
+      browser_version: latest-1
