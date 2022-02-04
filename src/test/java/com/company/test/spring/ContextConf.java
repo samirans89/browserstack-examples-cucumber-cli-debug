@@ -15,8 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class ContextConf extends BaseSteps {
 
     @Bean(name = "webdriver", destroyMethod = "quit")
-    @Scope("singleton")
-//    @Scope("prototype")
+    @Scope("prototype")
     public WebDriver getWebDriver() {
         WebDriver webdriver = WebDriverRunner.getWebDriver();
         System.out.println("getWebDriver webdriver object is: " + webdriver);
@@ -26,16 +25,19 @@ public class ContextConf extends BaseSteps {
     }
 
     @Bean("wait")
+    @Scope("prototype")
     public WebDriverWait getWebDriverWait() {
         return new WebDriverWait(getWebDriver(), 5);
     }
 
     @Bean("debugPage")
+    @Scope("prototype")
     public DebugPage getDebugPage() {
         return new DebugPage(getWebDriver());
     }
 
     @Bean("seleniumUtils")
+    @Scope("prototype")
     public SeleniumUtils getSeleniumUtils() {
         return new SeleniumUtils(getWebDriver());
     }
