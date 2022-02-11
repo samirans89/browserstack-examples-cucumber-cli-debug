@@ -21,3 +21,8 @@ cloudDriver:
       os_version: '10'
       browser: Chrome
       browser_version: latest-1
+    - name: Win10_Firefox_Latest
+      os: Windows
+      os_version: '10'
+      browser: Firefox
+      browser_version: latest
