@@ -17,11 +17,8 @@ public class ContextConf extends BaseSteps {
     @Bean(name = "webdriver", destroyMethod = "quit")
     @Scope("prototype")
     public WebDriver getWebDriver() {
-        WebDriver webdriver = WebDriverRunner.getWebDriver();
-        System.out.println("getWebDriver webdriver object is: " + webdriver);
-        webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return webdriver;
+
+        return WebDriverRunner.getWebDriver();
     }
 
     @Bean("wait")
